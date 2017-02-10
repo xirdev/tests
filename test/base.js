@@ -7,7 +7,9 @@ if (!process.env.XIRSYS_TEST) {
     process.exit(1)
 }
 
-if (fs.existsSync("tests.txt"))
+var with_docs = process.env.XIRSYS_DOCS
+
+if (with_docs && fs.existsSync("tests.txt"))
     fs.unlinkSync("tests.txt")
 
 
@@ -75,7 +77,7 @@ function del(path, cb) {
 
 function add_test_account(ident, cb) {
     del("_acc/accounts?k=" + ident, function (res) {
-        user = { k: ident, v: { "email": "ritchie@async.cl" } }
+        user = { k: ident, v: { "email": "test@xirsys.com" } }
         put("_acc/accounts", user, function (res) {
             assert(res.s == "ok", "instead returns " + JSON.stringify(res))
             cb()
@@ -85,7 +87,8 @@ function add_test_account(ident, cb) {
 
 
 function report(val, curl) {
-    fs.appendFileSync("tests.txt", '\n' + curl + '\n' + JSON.stringify(val, null, 2) + "\n==")
+	if (with_docs)
+	    fs.appendFileSync("tests.txt", '\n' + curl + '\n' + JSON.stringify(val, null, 2) + "\n==")
 }
 
 

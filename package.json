@@ -1,7 +1,7 @@
 {
-  "name": "integration",
+  "name": "tests",
   "version": "1.0.0",
-  "description": "",
+  "description": "Test The Xirsys Rest API",
   "main": "base.js",
   "dependencies": {
     "chai": "^3.5.0",
@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xirdev/integration.git"
+    "url": "git+https://github.com/xirdev/tests.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xirdev/integration/issues"
+    "url": "https://github.com/xirdev/tests/issues"
   },
-  "homepage": "https://github.com/xirdev/integration#readme"
+  "homepage": "https://github.com/xirdev/tests#readme"
 }

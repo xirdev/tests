@@ -1,9 +1,5 @@
 #!/bin/bash
-cd /cells/tests
 
-echo Hang on doing an npm install ... 
-
-npm install
 
 export XIRSYS_TEST=http://%24sys:secret@$NEURON_PORT_4006_TCP_ADDR:4006/
 mocha
